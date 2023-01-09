@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>drum</title>
+    <style>
+        *{
+            margin: 0;padding: 0;box-sizing: border-box;
+        }
+        h2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200px;
+            color: rgb(6, 6, 6);
+            
+            
+        }
+        h2 div{
+            margin: 20px;
+        }
+        .container{
+            margin-top: 0px;
+            display: flex;
+            justify-content: space-around;
+            color: black;
+            background-color: none;
+        }
+        .div1,.div2,.div3,.div4{
+            background-image: url("Drum_Kit/images/tom2.png");
+
+            height: 100px;
+            width: 100px;
+            color: rgb(0, 5, 9);
+            background-size: 100% 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+        .div2{
+            background-image: url("Drum_Kit/images/crash.png");
+           
+        }
+        .div2:hover{
+            background-image: url("Drum_Kit/images/crash.png");
+             box-shadow: 2px 2px 5px  grey;
+        }
+        .div4{
+            background-image: url("Drum_Kit/images/kick.png");
+           
+        }
+        .div3{
+            background-image: url("Drum_Kit/images/snare.png");
+           
+        }
+        .div0{
+            background-image: url("Drum_Kit/images/tom1.png");
+           
+        }
+    </style>
+</head>
+<body>
+    <h2>Drum <div><img src="./Drum_Kit/images/tom4.png" height="100px" width="100px" alt=""></div> Kit</h2>
+    <div class="container">
+        <div class="div1 div0">a</div>
+        <div class="div1">s</div>
+        <div class="div1 div2">d</div>
+        <div class="div1 div3">f</div>
+        <div class="div1 div4">g</div>
+    </div>
+    <script>
+         const btsarmy=document.getElementsByClassName('div1');
+         for(let i=0;i<btsarmy.length;i++){
+
+            btsarmy[i].addEventListener("click",()=>{
+                console.log(btsarmy[i].innerText);
+                playSong(btsarmy[i].innerText);
+                
+            })
+         }
+         function playSong(ele){
+            if(ele=='a'){
+               let audio=new Audio('buzz.mp3')
+               audio.play();
+            }
+            else if(ele=='s'){
+               let audio=new Audio('buzzer.mp3')
+               audio.play();
+            }
+           
+            else if(ele=='d'){
+               let audio=new Audio('crash.mp3')
+               audio.play();
+            }
+           
+            else if(ele=='f'){
+               let audio=new Audio('crock.mp3')
+               audio.play();
+            }
+            else if(ele=='g'){
+               let audio=new Audio('pin.mp3')
+               audio.play();
+            }
+           
+
+         }
+    </script>
+</body>
+</html>
